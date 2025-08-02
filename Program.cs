@@ -5,8 +5,11 @@ var app = builder.Build();
 
 
 
-app.MapGet("/", () => "Hello World!");
-app.MapGet("/asd", () => "deneme1");
+// app.MapDefaultControllerRoute();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Meeting}/{action=Index}/{id?}"
+);
 
 
 app.Run();
