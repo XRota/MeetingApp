@@ -3,7 +3,8 @@
 ViewBag.Title = "Toplantı Başvuru Formu";
 }
 <h1 class="h4">Toplatı Katılım Formu</h1>
-<form method="post">
+<form method="post" novalidate>
+    <div asp-validation-summary="All"></div>
     <div class="mb-3">
         <input asp-for="Name" class="form-control" placeholder="Adınız ve Soyadınız">
     </div>
@@ -15,6 +16,7 @@ ViewBag.Title = "Toplantı Başvuru Formu";
     </div>
     <div class="mb-3">
         <select asp-for="WillAttend" class="form-select">
+        <option value="">Katılacak mısınız?</option>
             <option value="true">Evet</option>
             <option value="false">Hayır</option>
         </select>

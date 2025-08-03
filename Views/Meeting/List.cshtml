@@ -25,7 +25,7 @@
                     <td>@user.Name</td>
                     <td>@(user.WillAttend ? "Evet" : "Hayır")</td>
                     <td>
-                        <a class="btn btn-sm btn-outline-primary" href="#">Detay</a>
+                        <a class="btn btn-sm btn-outline-primary" href="/meeting/Details/@user.Id">Detay</a>
                     </td>
                 </tr>
                 if (user.WillAttend== true)

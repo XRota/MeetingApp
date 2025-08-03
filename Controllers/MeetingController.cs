@@ -21,13 +21,22 @@ namespace MEETINGAPP.Controllers
         [HttpPost]
         public IActionResult Apply(UserInfo model)
         {
+            if (ModelState.IsValid)
+            {
+                
             Repository.CreateUser(model);
-            ViewBag.UserCount=Repository.Users.Where(i=> i.WillAttend == true).Count();
-            
-            return View("Thanks",model);
+            ViewBag.UserCount = Repository.Users.Where(i => i.WillAttend == true).Count();
+            return View("Thanks", model);
+            }else
+            {
+                return View(model);
+            }
         }
 
-
+        public IActionResult Details(int id)
+        {
+            return View(Repository.GetById(id));
+        }
 
     }
-}
+} 
