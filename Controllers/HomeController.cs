@@ -4,9 +4,12 @@ namespace meetingapp.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "home/index";
+            int saat = DateTime.Now.Hour;
+
+            ViewBag.selamlama = saat < 12 ? "İyi günler" : "Günaydın";
+            return View();
         }
     }
 } 

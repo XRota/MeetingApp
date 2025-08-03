@@ -3,12 +3,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 var app = builder.Build();
 
+app.UseStaticFiles();
 
+app.UseRouting();
 
 // app.MapDefaultControllerRoute();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Meeting}/{action=Index}/{id?}"
+    pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
 
