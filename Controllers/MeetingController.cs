@@ -1,6 +1,7 @@
+using MEETINGAPP.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MeetingApp.Controllers
+namespace MEETINGAPP.Controllers
 {
 
     public class MeetingController : Controller
@@ -21,6 +22,14 @@ namespace MeetingApp.Controllers
             return View();
         }
 
-        
+        [HttpPost]
+        public IActionResult Apply(UserInfo model)
+        {
+            ArgumentNullException.ThrowIfNull(model);
+            return View();
+        }
+
+
+
     }
 }
