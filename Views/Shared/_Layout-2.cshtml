@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <title>@ViewBag.Title - Rota Studio</title>
+    <title>@ViewBag.Title - Rota Rotaly</title>
 </head>
 
 <body>
     <a href="/Home/Index" class="text-decoration-none" title="Go to Home">
-        <div class="bg-primary text-white p-2 text-center">
-            Rota Studio
+        <div class="bg-success text-white p-2 text-center">
+            Rotaly
         </div>
     </a>
     <div class="container mt-3">
@@ -28,12 +28,7 @@
     </div>
 </body>
 <footer>
-    <div class="bg-secondary text-white p-2 text-center mt-5">
-        <p>Rota Studio - Meeting Management</p>
-        <p>Version 1.0</p>
-        <a href="/">Home</a>
-        &copy; 2023 Rota Studio
-    </div>
+    @await Html.PartialAsync("_Footer")
 </footer>
 
 </html>

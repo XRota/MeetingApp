@@ -7,7 +7,10 @@
 <main class="text-center">
 
     <h1 class="h4">@ViewBag.selamlama</h1>
-    <h5>Tarih : @ViewBag.Datetime</h5>
+    @* <h5>Tarih : @ViewBag.Datetime</h5> *@
+    <h5>
+    Tarih : <span id="live-datetime"></span>
+</h5>
     <p>Toplantı katılım durumunu bildiriniz</p>
     <div class="card my-2">
         <ul class="list-group list-group-flush">
@@ -19,4 +22,13 @@
     </div>
     <a class="btn btn-sm btn-outline-primary" asp-controller="Meeting" asp-action="Apply">Başvuru Yap</a>
 
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const formatted = now.toLocaleString('tr-TR');
+        document.getElementById('live-datetime').textContent = formatted;
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+</script>
 </main>
